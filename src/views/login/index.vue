@@ -97,9 +97,9 @@
 						value: 'en',
 					}
 				],
-				WechatLoginCode: "",
-				showWechatLogin: false,
-				isWechatLoginResult: false
+				//WechatLoginCode: "",
+				//showWechatLogin: false,
+				//isWechatLoginResult: false
 			}
 		},
 		watch:{
@@ -136,14 +136,14 @@
 			configLang(command){
 				this.config.lang = command.value
 			},
-			wechatLogin(){
-				this.showWechatLogin = true
-				this.WechatLoginCode = "SCUI-823677237287236-" + new Date().getTime()
-				this.isWechatLoginResult = false
-				setTimeout(()=>{
-					this.isWechatLoginResult = true
-				},3000)
-			}
+			// wechatLogin(){
+			// 	this.showWechatLogin = true
+			// 	this.WechatLoginCode = "SCUI-823677237287236-" + new Date().getTime()
+			// 	this.isWechatLoginResult = false
+			// 	setTimeout(()=>{
+			// 		this.isWechatLoginResult = true
+			// 	},3000)
+			// }
 		}
 	}
 </script>
