@@ -1,5 +1,6 @@
 <template>
 	<div class="login_bg">
+		<!--
 		<div class="login_adv" style="background-image: url(img/auth_banner.jpg);">
 			<div class="login_adv__title">
 				<h2>SCUI</h2>
@@ -21,7 +22,7 @@
 			<div class="login_adv__bottom">
 				© {{$CONFIG.APP_NAME}} {{$CONFIG.APP_VER}}
 			</div>
-		</div>
+		</div> -->
 		<div class="login_main">
 			<div class="login_config">
 				<el-button :icon="config.dark?'el-icon-sunny':'el-icon-moon'" circle type="info" @click="configDark"></el-button>
@@ -47,20 +48,20 @@
 					<el-tab-pane :label="$t('login.accountLogin')" lazy>
 						<password-form></password-form>
 					</el-tab-pane>
-					<el-tab-pane :label="$t('login.mobileLogin')" lazy>
+					<!-- <el-tab-pane :label="$t('login.mobileLogin')" lazy>
 						<phone-form></phone-form>
-					</el-tab-pane>
+					</el-tab-pane> -->
 				</el-tabs>
-				<template v-if="$CONFIG.MY_SHOW_LOGIN_OAUTH">
+				<!-- <template v-if="$CONFIG.MY_SHOW_LOGIN_OAUTH">
 					<el-divider>{{ $t('login.signInOther') }}</el-divider>
 					<div class="login-oauth">
 						<el-button type="success" icon="sc-icon-wechat" circle @click="wechatLogin"></el-button>
 					</div>
-				</template>
+				</template> -->
 			</div>
 		</div>
 	</div>
-	<el-dialog v-model="showWechatLogin" :title="$t('login.wechatLoginTitle')" :width="400" destroy-on-close>
+	<!-- <el-dialog v-model="showWechatLogin" :title="$t('login.wechatLoginTitle')" :width="400" destroy-on-close>
 		<div class="qrCodeLogin">
 			<sc-qr-code class="qrCode" :text="WechatLoginCode" :size="200"></sc-qr-code>
 			<p class="msg">{{$tc('login.wechatLoginMsg', 1)}}<br/>{{$tc('login.wechatLoginMsg', 2)}}</p>
@@ -68,17 +69,17 @@
 				<el-result icon="success" :title="$tc('login.wechatLoginResult', 1)" :sub-title="$tc('login.wechatLoginResult', 2)"></el-result>
 			</div>
 		</div>
-	</el-dialog>
+	</el-dialog> -->
 </template>
 
 <script>
 	import passwordForm from './components/passwordForm'
-	import phoneForm from './components/phoneForm'
+	// import phoneForm from './components/phoneForm'
 
 	export default {
 		components: {
 			passwordForm,
-			phoneForm
+			// phoneForm
 		},
 		data() {
 			return {
@@ -126,7 +127,7 @@
 			this.$store.commit("clearViewTags")
 			this.$store.commit("clearKeepLive")
 			this.$store.commit("clearIframeList")
-			console.log('%c SCUI %c Gitee: https://gitee.com/lolicode/scui', 'background:#666;color:#fff;border-radius:3px;', '')
+			//console.log('%c SCUI %c Gitee: https://gitee.com/lolicode/scui', 'background:#666;color:#fff;border-radius:3px;', '')
 		},
 		methods: {
 			configDark(){
@@ -149,7 +150,7 @@
 
 <style scoped>
 	.login_bg {width: 100%;height: 100%;background: #fff;display: flex;}
-	.login_adv {width: 33.33333%;background-color: #555;background-size: cover;background-position: center center;background-repeat: no-repeat;position: relative;}
+	/* .login_adv {width: 33.33333%;background-color: #555;background-size: cover;background-position: center center;background-repeat: no-repeat;position: relative;}
 	.login_adv__title {color: #fff;padding: 40px;position: absolute;top:0px;left:0px;right: 0px;z-index: 2;}
 	.login_adv__title h2 {font-size: 40px;}
 	.login_adv__title h4 {font-size: 18px;margin-top: 10px;font-weight: normal;}
@@ -159,7 +160,7 @@
 	.login_adv__title div i {font-size: 40px;}
 	.login_adv__title div i.add {font-size: 20px;color: rgba(255,255,255,0.6);}
 	.login_adv__bottom {position: absolute;left:0px;right: 0px;bottom: 0px;color: #fff;padding: 40px;background-image:linear-gradient(transparent, #000);z-index: 3;}
-	.login_adv__mask {position: absolute;top:0px;left:0px;right: 0px;bottom: 0px;background: rgba(0,0,0,0.5);z-index: 1;}
+	.login_adv__mask {position: absolute;top:0px;left:0px;right: 0px;bottom: 0px;background: rgba(0,0,0,0.5);z-index: 1;} */
 
 	.login_main {flex: 1;overflow: auto;display:flex;}
 	.login-form {width: 400px;margin: auto;padding:20px 0;}
